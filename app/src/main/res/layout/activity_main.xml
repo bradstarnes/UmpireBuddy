@@ -51,21 +51,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/closeApp"
-        android:layout_width="283dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="141dp"
-        android:layout_marginEnd="122dp"
-        android:layout_marginBottom="40dp"
-        android:onClick="closeApp"
-        android:text="EXIT"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.57"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/reset2"
+        android:id="@+id/reset"
         android:layout_width="148dp"
         android:layout_height="55dp"
         android:layout_marginStart="141dp"
@@ -77,5 +63,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="75dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="17dp"
+        android:onClick="closeApp"
+        android:text="EXIT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
