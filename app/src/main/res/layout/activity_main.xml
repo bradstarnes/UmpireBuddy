@@ -14,6 +14,8 @@
         android:layout_marginBottom="332dp"
         android:onClick="countST"
         android:text="STRIKE"
+        android:focusableInTouchMode="false"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -59,6 +61,7 @@
         android:layout_marginBottom="128dp"
         android:onClick="reset"
         android:text="RESET"
+        android:focusableInTouchMode="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -71,6 +74,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="17dp"
         android:onClick="closeApp"
+        android:focusableInTouchMode="false"
         android:text="EXIT"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -82,6 +86,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
         android:onClick="aboutPopup"
+        android:focusableInTouchMode="false"
         android:text="About"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
