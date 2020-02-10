@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView ballLabel = findViewById(R.id.balls);
                 ballCounter++;
 
-                if ( ballCounter == 3){
+                if ( ballCounter == 4){
                     new AlertDialog.Builder(MainActivity.this)
                             .setTitle("WALK THAT BATTER! ")
                             .setMessage("The batter has been walked!! ")
