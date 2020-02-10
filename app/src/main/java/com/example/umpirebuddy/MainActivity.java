@@ -3,9 +3,12 @@ package com.example.umpirebuddy;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.app.AlertDialog;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 import android.os.Bundle;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,27 +27,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void checkforBalls( View view){
-
-
-    }
-
-    public void checkforStrikes( View view){
-
-    }
-
     public void countST (View view){
         TextView strikesbutton = findViewById(R.id.strike_button);
         strikesbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
-                if ( strikeCounter == 3){
-                    popUp.showAtLocation(layout, Gravity.BOTTOM, 10, 10);
-                    popUp.update(50, 50, 300, 80);
-                }
                 TextView strikesLabel = findViewById(R.id.strikes);
                 strikeCounter++;
+                if ( strikeCounter == 3){
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("STRIKE OUT!")
+                            .setMessage("That's too bad! You've struck out.")
+                            .setNeutralButton("Close", null)
+                            .setIcon(android.R.drawable.stat_sys_warning).show();
+                    strikeCounter = 0;
+                    ballCounter = 0;
+
+                };
                 System.out.println(strikeCounter);
                 strikesLabel.setText("Strikes "+strikeCounter);
             }
@@ -54,13 +54,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void countBL (View view){
         TextView ballButton = findViewById(R.id.ball_button);
-
         ballButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
             {
                 TextView ballLabel = findViewById(R.id.balls);
                 ballCounter++;
+
+                if ( ballCounter == 3){
+                    new AlertDialog.Builder(MainActivity.this)
+                            .setTitle("WALK THAT BATTER! ")
+                            .setMessage("The batter has been walked!! ")
+                            .setNeutralButton("Close", null)
+                            .setIcon(android.R.drawable.stat_sys_warning).show();
+                    strikeCounter = 0;
+                    ballCounter = 0;
+                };
                 System.out.println(ballCounter);
                 ballLabel.setText("Balls "+ ballCounter);
             }
