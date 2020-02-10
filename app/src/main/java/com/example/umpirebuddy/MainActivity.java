@@ -18,13 +18,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         strikeCounter = 0;
         ballCounter = 0;
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     public void countST (View view){
@@ -94,14 +91,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view)
             {
-                ballCounter = 0;
-                strikeCounter = 0;
+
                 TextView ballsLabel = findViewById(R.id.balls);
                 TextView strikesLabel = findViewById(R.id.strikes);
+                ballCounter = 0;
+                strikeCounter = 0;
                 ballsLabel.setText("Balls "+ballCounter);
                 strikesLabel.setText("Strikes "+strikeCounter);
             }
         });
     }
 
+    public void aboutPopup (View view){
+        TextView aboutButton = findViewById(R.id.aboutScreen);
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                new AlertDialog.Builder(MainActivity.this)
+                        .setTitle("Umpire Buddy V2.0 ")
+                        .setMessage("Developed by Brad Starnes /n with help of StackOverflow and Google Dev Docs ")
+                        .setNeutralButton("Close", null)
+                        .setIcon(android.R.drawable.stat_sys_warning).show();
+            }
+        });
+    }
 }
